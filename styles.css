@@ -33,16 +33,20 @@
 
 body{
     background: var(--midnight-gradient);
+    color: white;
 }
 
+body.light{
+  background: var(--ice-blue);
+}
 
 
 /**Header**/
 
 .header-left{
     background-color: var(--dark-navy);
-    padding: 15px;
-    margin: 15px;
+    padding: 0.5rem;
+    margin: 1rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,12 +59,151 @@ body{
 }
 
 .header-left .sun-logo{
-    height: 35px;
-    width:35px;
+    height: 45px;
+    width:45px;
     background-color: var(--midnight-blue);
-    padding: 5px;
+    padding: 10px;
     border-radius: 7px;
     cursor: pointer;
+}
+
+.moon-logo{
+  height: 45px;
+  width:45px;
+  background-color: var(--light-gray);
+  padding: 10px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.sun-logo:hover, .moon-logo:hover{
+  background-color: var(--slate-blue);
+}
+.light.moon-logo:hover{
+  background-color: var(--slate-blue);
+}
+
+
+
+/**Main buttons**/
+
+.extensions-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.extensions-list-btn button{
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--dark-navy);
+    color: white;
+    font-weight: 300;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-right: 10px;
+    box-shadow: 1px 1px 1px  hsla(0, 0%, 78%, 0.4);
+}
+
+.extensions-list-btn button:hover{
+    background-color: var(--slate-blue);
+}
+
+.extensions-list-btn button:focus{
+  border:2px solid var(--bright-red);
+  color: var(--midnight-gradient);
+}
+
+.extensions-list-btn button.light:hover{
+  background-color: var(--cherry-red);
+}
+
+.extensions-list-btn button.light:focus{
+border:2px solid var(--cherry-red);
+color: white;
+}
+
+/*** Main Grid  ***/
+main{
+  padding:1rem 4rem;
+  margin: auto;
+}
+
+.extensions-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-gap: 10px;
+  /* max-width: 750px; */
+  margin:  auto;
+}
+
+
+/** individual card design**/
+
+.extension-card{
+    background-color: var(--dark-navy);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 1px 1px 1px  hsla(0, 0%, 78%, 0.4);
+    ;
+}
+
+.extension-card.light{
+  background-color: var(--ice-blue);
+}
+
+.extension-card-details{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 10px;
+}
+
+.extension-card-details-txt{
+    font-weight: 300;
+    color: white;
+    padding-top: 1rem;
+}
+
+.extension-card-details-txt p{
+  font-size: 14px;
+
+}
+
+.extension-card-btns{
+  display: flex;
+  justify-content: space-between;
+}
+
+.extension-card-btns .btn-remove{
+    border: none;
+    background-color: var(--midnight-gradient);
+    color: white;
+    border: 1px solid white;
+    padding: 0.4rem 0.7rem;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.extension-card-btns .btn-remove:hover{
+  background-color: var(--bright-red);
+  color: var(--deep-navy);
+  border: none;
+
+}
+
+.extension-card-btns .btn-remove.light:hover{
+  background-color: var(--cherry-red);
+  color: white;
+  border: none;
+}
+
+
+.extension-card-btns .btn-remove:focus{
+  border:3px solid var(--bright-red);
+  background-color: var(--slate-blue)
 }
 
 
@@ -85,7 +228,7 @@ body{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #444; /* Default background */
+    background-color: #444; 
     border-radius: 20px;
     transition: 0.4s;
   }
@@ -100,13 +243,21 @@ body{
     background-color: white;
     border-radius: 50%;
     transition: 0.4s;
-  }
+}
   
-  input:checked + .slider {
-    background-color: #f44; /* Active background (red) */
-  }
+input:checked + .slider {
+    background-color: var(--bright-red); 
+}
   
-  input:checked + .slider:before {
+input:checked + .slider.light {
+    background-color: var(--cherry-red); 
+}
+
+input:checked + .slider:before {
     transform: translateX(20px);
-  }
+}
   
+
+
+/**  Responsive Design    ***/
+
